@@ -440,6 +440,64 @@
     .cards.four-col { grid-template-columns: 1fr; }
     .section-title { font-size: 28px; }
   }
+
+  .card-img {
+    display: block;
+    width: calc(100% + 56px);
+    margin: -28px -28px 18px -28px;
+    height: 150px;
+    object-fit: cover;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .kids-section { background: var(--white); }
+
+  .kids-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .kids-card {
+    background: var(--linen);
+    border: 1px solid var(--border);
+    padding: 28px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.25s, box-shadow 0.25s;
+  }
+
+  .kids-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 40px rgba(184,122,106,0.12);
+  }
+
+  .kids-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(to right, var(--champagne), var(--blush));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+  }
+
+  .kids-card:hover::after { transform: scaleX(1); }
+
+  .kids-card-img {
+    width: calc(100% + 56px);
+    margin: -28px -28px 16px -28px;
+    height: 130px;
+    object-fit: cover;
+    display: block;
+    border-bottom: 1px solid var(--border);
+  }
+
+  @media (max-width: 700px) {
+    .kids-grid { grid-template-columns: 1fr; }
+  }
+
 </style>
 </head>
 <body>
@@ -476,8 +534,8 @@
     <div class="section-count">3 addresses</div>
   </div>
   <div class="cards">
-
     <div class="card">
+      <img class="card-img" src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=600&q=80" alt="TYPICA Specialty Coffee" loading="lazy">
       <span class="card-badge">Specialty Coffee</span>
       <div class="card-name">TYPICA Specialty Coffee</div>
       <div class="card-walk">11 min walk from Rue Braque · ~920m</div>
@@ -491,6 +549,7 @@
     </div>
 
     <div class="card">
+      <img class="card-img" src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=600&q=80" alt="Terres de Café" loading="lazy">
       <span class="card-badge">Café · Specialty</span>
       <div class="card-name">Terres de Café</div>
       <div class="card-walk">4 min walk from Rue Braque · ~300m</div>
@@ -504,6 +563,7 @@
     </div>
 
     <div class="card">
+      <img class="card-img" src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=600&q=80" alt="Café du Marais" loading="lazy">
       <span class="card-badge">All-day Café</span>
       <div class="card-name">Café du Marais</div>
       <div class="card-walk">7 min walk from Rue Braque · ~595m</div>
@@ -533,6 +593,7 @@
   <div class="cards">
 
     <div class="card">
+      <img class="card-img" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80" alt="Soi Paris" loading="lazy">
       <span class="card-badge">Womenswear</span>
       <div class="card-name">Soi Paris</div>
       <div class="card-walk">9 min walk from Rue Braque · ~690m</div>
@@ -546,6 +607,7 @@
     </div>
 
     <div class="card">
+      <img class="card-img" src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&q=80" alt="20 Fashion Paris" loading="lazy">
       <span class="card-badge">Multi-brand · Luxury</span>
       <div class="card-name">20 Fashion Paris</div>
       <div class="card-walk">1–2 min walk from Rue Braque · ~100m</div>
@@ -559,6 +621,7 @@
     </div>
 
     <div class="card">
+      <img class="card-img" src="https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?w=600&q=80" alt="Les Stocks du Marais" loading="lazy">
       <span class="card-badge">Designer Stock</span>
       <div class="card-name">Les Stocks du Marais</div>
       <div class="card-walk">8 min walk from Rue Braque · ~620m</div>
@@ -588,6 +651,7 @@
   <div class="cards">
 
     <div class="card">
+      <img class="card-img" src="https://images.unsplash.com/photo-1541233349642-5a1d3f4c9aaf?w=600&q=80" alt="Musée National Picasso" loading="lazy">
       <span class="card-badge">Art Museum</span>
       <div class="card-name">Musée National Picasso</div>
       <div class="card-walk">9 min walk from Rue Braque · ~710m</div>
@@ -601,6 +665,7 @@
     </div>
 
     <div class="card">
+      <img class="card-img" src="https://images.unsplash.com/photo-1572953109213-3be62398eb95?w=600&q=80" alt="MAHJ — Musée d'Art et d'Histoire du Judaïsme" loading="lazy">
       <span class="card-badge">Art & History</span>
       <div class="card-name">MAHJ — Musée d'Art et d'Histoire du Judaïsme</div>
       <div class="card-walk">3 min walk from Rue Braque · ~210m</div>
@@ -614,6 +679,7 @@
     </div>
 
     <div class="card">
+      <img class="card-img" src="https://images.unsplash.com/photo-1518998053901-5348d3961a04?w=600&q=80" alt="Musée des Arts et Métiers" loading="lazy">
       <span class="card-badge">Science & Technology</span>
       <div class="card-name">Musée des Arts et Métiers</div>
       <div class="card-walk">6 min walk from Rue Braque · ~510m</div>
@@ -627,6 +693,7 @@
     </div>
 
     <div class="card">
+      <img class="card-img" src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=600&q=80" alt="Musée du Louvre" loading="lazy">
       <span class="card-badge">World Museum</span>
       <div class="card-walk">14 min walk from Rue de Braque · ~1.1km</div>
       <div class="card-name">Musée du Louvre</div>
@@ -656,6 +723,7 @@
   <div class="cards">
 
     <div class="card">
+      <img class="card-img" src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80" alt="Salōn Marais" loading="lazy">
       <span class="card-badge">Mediterranean · Bistro</span>
       <div class="card-name">Salōn Marais</div>
       <div class="card-walk">11 min walk from Rue Braque · ~850m</div>
@@ -669,6 +737,7 @@
     </div>
 
     <div class="card">
+      <img class="card-img" src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&q=80" alt="Le Ju'" loading="lazy">
       <span class="card-badge">Brasserie · All-day</span>
       <div class="card-name">Le Ju'</div>
       <div class="card-walk">6 min walk from Rue Braque · ~480m</div>
@@ -682,6 +751,7 @@
     </div>
 
     <div class="card">
+      <img class="card-img" src="https://images.unsplash.com/photo-1424847651672-bf20a4b0982b?w=600&q=80" alt="Le Marais Restaurant" loading="lazy">
       <span class="card-badge">Mediterranean · All-day</span>
       <div class="card-name">Le Marais Restaurant</div>
       <div class="card-walk">5 min walk from Rue Braque · ~380m</div>
@@ -716,6 +786,7 @@
   <div class="cards">
 
     <div class="card">
+      <img class="card-img" src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=600&q=80" alt="Copains" loading="lazy">
       <span class="card-badge">Bakery · Café</span><span class="card-gf-badge">GF · DF · Vegan</span>
       <div class="card-name">Copains</div>
       <div class="card-walk">4 min walk from Rue Braque · ~340m</div>
@@ -729,6 +800,7 @@
     </div>
 
     <div class="card">
+      <img class="card-img" src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=600&q=80" alt="Kitchen" loading="lazy">
       <span class="card-badge">Café · Brunch</span><span class="card-gf-badge">GF · DF options</span>
       <div class="card-name">Kitchen</div>
       <div class="card-walk">4 min walk from Rue Braque · ~325m</div>
@@ -742,6 +814,7 @@
     </div>
 
     <div class="card">
+      <img class="card-img" src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600&q=80" alt="B.Better" loading="lazy">
       <span class="card-badge">Vegan Restaurant</span><span class="card-gf-badge">GF · DF · Vegan</span>
       <div class="card-name">B.Better</div>
       <div class="card-walk">15 min walk from Rue Braque · ~1.2km</div>
@@ -755,6 +828,7 @@
     </div>
 
     <div class="card">
+      <img class="card-img" src="https://images.unsplash.com/photo-1543362906-acfc16c67564?w=600&q=80" alt="Le Potager du Marais" loading="lazy">
       <span class="card-badge">French Vegan</span><span class="card-gf-badge">GF · DF · Vegan</span>
       <div class="card-name">Le Potager du Marais</div>
       <div class="card-walk">14 min walk from Rue Braque · ~1.1km</div>
@@ -768,6 +842,7 @@
     </div>
 
     <div class="card">
+      <img class="card-img" src="https://images.unsplash.com/photo-1498579150354-977475b7ea0b?w=600&q=80" alt="Ground to Grow" loading="lazy">
       <span class="card-badge">Vegan Café · Wellness</span><span class="card-gf-badge">GF · DF · Vegan</span>
       <div class="card-name">Ground to Grow</div>
       <div class="card-walk">3 min walk from Rue Braque · ~275m</div>
@@ -784,6 +859,64 @@
 </section>
 
 <!-- FOOTER -->
+
+<div class="divider"><div class="divider-line"></div><div class="divider-mark">✦</div><div class="divider-line"></div></div>
+
+<section class="section kids-section" id="kids">
+  <div class="section-head">
+    <div>
+      <div class="section-eyebrow">🧒 Family & Children</div>
+      <div class="section-title">For the Little Ones</div>
+    </div>
+    <div class="section-count">3 addresses</div>
+  </div>
+  <div class="kids-grid">
+
+    <div class="kids-card">
+      <img class="kids-card-img" src="https://images.unsplash.com/photo-1566151964836-b4f2dc8299a5?w=600&q=80" alt="Jardin Anne Frank" loading="lazy">
+      <span class="card-badge">Garden · Playground</span>
+      <div class="card-walk"><b>2 min walk from Rue de Braque · ~150m</b></div>
+      <div class="card-name">Jardin Anne Frank</div>
+      <div class="card-address">14 Impasse Berthaud, 75003</div>
+      <div class="card-desc">A hidden and deeply beautiful garden tucked behind an alleyway steps from home. Roses in bloom, benches, a playground, and a ping pong table. Children run free while adults absorb the calm. Small plaques tell the story of Anne Frank. One of the most quietly moving spots in the Marais — and the closest green space to Rue de Braque.</div>
+      <div class="card-footer">
+        <div class="card-rating">★ 4.4 <span style="color:var(--stone);font-size:10px">(1,192)</span></div>
+        <div class="card-hours">Daily 10:00–18:30</div>
+      </div>
+      <a class="card-dir" href="https://www.google.com/maps/dir/Rue+de+Braque+Paris/Jardin+Anne+Frank+Paris" target="_blank">Directions from Rue de Braque →</a>
+    </div>
+
+    <div class="kids-card">
+      <img class="kids-card-img" src="https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=600&q=80" alt="Centre Pompidou" loading="lazy">
+      <span class="card-badge">Art Museum · Family</span>
+      <div class="card-walk"><b>2 min walk from Rue de Braque · ~150m</b></div>
+      <div class="card-name">Centre Pompidou · Galerie des Enfants</div>
+      <div class="card-address">Place Georges-Pompidou, 75004</div>
+      <div class="card-desc">The Centre Pompidou's dedicated children's gallery — the Galerie des Enfants — runs hands-on interactive exhibitions designed specifically for ages 3–10. Creative workshops, tactile art experiences, and immersive installations make modern art genuinely thrilling for children. The building's extraordinary exterior is a spectacle in itself. Free for EU residents under 18, and the rooftop views across Paris are unmissable.</div>
+      <div class="card-footer">
+        <div class="card-rating">★ 4.5 <span style="color:var(--stone);font-size:10px">(78,000+)</span></div>
+        <div class="card-hours">Wed–Mon 11:00–21:00 · Closed Tuesday</div>
+      </div>
+      <a class="card-dir" href="https://www.google.com/maps/dir/Rue+de+Braque+Paris/Centre+Pompidou+Paris" target="_blank">Directions from Rue de Braque →</a>
+    </div>
+
+    <div class="kids-card">
+      <img class="kids-card-img" src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=600&q=80" alt="Jardins des Archives Nationales" loading="lazy">
+      <span class="card-badge">Garden · Picnic</span>
+      <div class="card-walk"><b>5 min walk from Rue de Braque · ~375m</b></div>
+      <div class="card-name">Jardins des Archives Nationales</div>
+      <div class="card-address">60 Rue des Francs Bourgeois, 75003</div>
+      <div class="card-desc">A beautifully kept secret garden inside the Hôtel de Soubise — one of the most elegant courtyards in Paris, almost entirely unknown to tourists. Children love the wide open lawns and geometric rose garden in bloom. Perfect for a relaxed picnic lunch after a morning of exploring. The surrounding 18th-century architecture makes it feel like a film set. Free and open daily.</div>
+      <div class="card-footer">
+        <div class="card-rating">★ 4.6 <span style="color:var(--stone);font-size:10px">(1,156)</span></div>
+        <div class="card-hours">Daily 8:00–20:00</div>
+      </div>
+      <a class="card-dir" href="https://www.google.com/maps/dir/Rue+de+Braque+Paris/Jardins+des+Archives+Nationales+Paris" target="_blank">Directions from Rue de Braque →</a>
+    </div>
+
+  </div>
+</section>
+
 <footer>
   <div>
     <div class="footer-title">Le Marais</div>
